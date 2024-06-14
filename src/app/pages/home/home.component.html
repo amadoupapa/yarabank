@@ -1,0 +1,62 @@
+<div class="container-fluid h-100 pt-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-xl-3">
+        <div class="card bg-c-blue order-card">
+          <div class="card-block">
+            <h6 class="m-b-20">Solde</h6>
+            <h2 class="text-right">
+            <span>486 XOF</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-xl-3">
+        <div class="card bg-c-pink order-card">
+          <div class="card-block">
+            <h6 class="m-b-20"> Total Débits</h6>
+            <h2 class="text-right">
+              <span>486</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-xl-3">
+        <div class="card bg-c-green order-card">
+          <div class="card-block">
+            <h6 class="m-b-20"> Total Crédits</h6>
+            <h2 class="text-right">
+              <span>486</span>
+            </h2>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Operations Courantes</h2>
+    <div class="row flex">
+      <div (click)="openModal('depotModalBtn')"  class="col-3 bg-c-green rounded border shadow-sm mx-2 p-3" style="cursor: pointer;">
+        <span><i class="fa-solid fa-wallet h1"></i></span>
+        <p class="h4">Effectuer un depot</p>
+      </div>
+
+      <div (click)="openModal('transfertModalBtn')" data-bs-target="#staticBackdrop" class="col-3 bg-c-green rounded border shadow-sm mx-2 p-3" style="cursor: pointer;">
+        <span><i class="fa-solid fa-hand-holding-dollar h1"></i></span>
+        <p class="h4">Transferer de l'argent</p>
+      </div>
+
+      <div class="col-3 bg-c-green rounded border shadow-sm mx-2 p-3">
+        <span><i class="fa-solid fa-clock-rotate-left h3"></i></span>
+        <p class="h4">Historique des transactions</p>
+      </div>
+      <app-depot-form></app-depot-form>
+      <app-transfert-form></app-transfert-form>
+    </div>
+  </div>
+</div>
