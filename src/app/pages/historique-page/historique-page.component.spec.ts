@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DepotPageComponent } from './depot-page.component';
+import { HistoriquePageComponent } from './historique-page.component';
 
-describe('DepotPageComponent', () => {
-  let component: DepotPageComponent;
-  let fixture: ComponentFixture<DepotPageComponent>;
+describe('HistoriquePageComponent', () => {
+  let component: HistoriquePageComponent;
+  let fixture: ComponentFixture<HistoriquePageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DepotPageComponent]
+      imports: [HistoriquePageComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DepotPageComponent);
+    fixture = TestBed.createComponent(HistoriquePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

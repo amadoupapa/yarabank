@@ -1,5 +1,14 @@
-<app-navbar></app-navbar>
-<div class="container h-75">
-    <router-outlet></router-outlet>
+@if (!isLogin) {
+<div class="m-0 p-0" style="min-width: 100%">
+  <router-outlet></router-outlet>
 </div>
-
+} @else{
+<div>
+  @if(!isAdmin){
+  <app-navbar></app-navbar>
+  }
+  <div class="container-fluid w-100 mt-3">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+}

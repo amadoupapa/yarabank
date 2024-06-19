@@ -1,16 +1,29 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { DepotPageComponent } from './pages/depot-page/depot-page.component';
-import { TransfertPageComponent } from './pages/transfert-page/transfert-page.component';
+import { HistoriquePageComponent } from './pages/historique-page/historique-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { InscriptionPageComponent } from './pages/inscription-page/inscription-page.component';
+import { HomePageComponent } from './admin/pages/home-page/home-page.component';
 
 export const routes: Routes = [
     {
         path:'', component: HomeComponent
     },
     {
-        path:'depot', component: DepotPageComponent
+        path:'historiques', component: HistoriquePageComponent
     },
     {
-        path:'transfert', component: TransfertPageComponent
-    }
+        path:'login', component: LoginPageComponent
+    },
+    {
+        path:'inscription', component: InscriptionPageComponent
+    },
+
+    {
+        path:'historique', component: HistoriquePageComponent
+    },
+    {
+        path:'admin', component: HomePageComponent
+    },
+   
 ];

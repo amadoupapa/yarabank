@@ -1,0 +1,348 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12 l12" style="text-align: center; color: white">
+        <i class="large material-icons">add_circle</i>
+        <h2>Formulaire de demande d'ouverture de compte</h2>
+        <p>Veuillez Remplir tous les champs</p>
+      </div>
+    </div>
+    <div class="row" id="blanc">
+      <div class="col l12 m12 s12" id="rectangle">
+        <form
+         
+        >
+          <!-- Champ prénom -->
+          <div class="input-field col s6">
+            <label for="prenom">Prénom</label>
+            <input
+              class="validate"
+              name="prenom"
+              type="text"
+              value=""
+              id="prenom"
+              placeholder="Aminata"
+              required
+            />
+          </div>
+
+          <!-- Champ nom -->
+          <div class="input-field col s6">
+            <label for="nom">Nom de famille</label>
+            <input
+              class="validate"
+              type="text"
+              value=""
+              name="nom"
+              id="nom"
+              placeholder="Yara"
+              required
+              text-capitalize
+            />
+          </div>
+
+          <!-- Champ Telephone -->
+          <div class="input-field col s6">
+            <label for="tel">Telephone</label>
+            <input
+              class="validate"
+              type="text"
+              value=""
+              name="tel"
+              id="tel"
+              placeholder="00-00-00-00"
+              required
+            />
+          </div>
+
+          <!-- Champ Adresse -->
+          <div class="input-field col s6">
+            <label for="adresse">Adresse</label>
+            <input
+              class="validate"
+              type="text"
+              value=""
+              name="adresse"
+              id="adresse"
+              minlength="3"
+              placeholder="ACI,Bamako"
+              required
+            />
+          </div>
+
+          <!-- Champ date de naissance -->
+          <div class="input-field col s6">
+            <label for="naissance">Date de naissance</label>
+            <input
+              type="text"
+              class="datepicker"
+              name="naissance"
+              placeholder="12/31/2000"
+              class="validate"
+              required
+            />
+          </div>
+
+          <!-- Champ email -->
+          <div class="input-field col s6">
+            <label for="email">Email</label>
+            <input
+              class="validate"
+              type="email"
+              value=""
+              name="email"
+              id="p1"
+              placeholder="exemple@gmail.com"
+              required
+            />
+          </div>
+
+          <!-- Champ CNI -->
+          <div class="input-field col s6">
+            <label for="cni">CNI</label>
+            <input
+              class="validate"
+              type="text"
+              value=""
+              name="cni"
+              id="cni"
+              placeholder=""
+              required
+            />
+          </div>
+          <!-- Champ username-->
+          <div class="input-field col s6">
+            <label for="nom">Nom d'Utilisateur</label>
+            <input
+              class="validate"
+              type="text"
+              value=""
+              name="nom_utilisateur"
+              id="nom_utilisateur"
+              placeholder="nom_utilisateur"
+              required
+            />
+          </div>
+          <!-- Champ mdp -->
+          <div class="input-field col s6">
+            <label for="nom">Mot de Passe</label>
+            <input
+              class="validate"
+              type="password"
+              value=""
+              name="mdp"
+              id="mdp"
+              placeholder="mot_de_passe"
+              required
+            />
+          </div>
+          <!-- Champ NIF -->
+          <div
+            class="input-field col s6"
+            id="entrepriseFields"
+            style="display: none"
+          >
+            <label for="NIF">NIF</label>
+            <input
+              class="validate"
+              type="text"
+              value=""
+              name="NIF"
+              id="NIF"
+              required
+            />
+          </div>
+
+          <!-- Champ Revenu -->
+          <div
+            class="input-field col s6"
+            id="particulierFields"
+            style="display: none"
+          >
+            <label for="revenu">Revenu</label>
+            <input
+              class="validate"
+              type="number"
+              value=""
+              name="revenu"
+              id="revenu"
+              required
+            />
+          </div>
+
+          <!-- Champ Chiffre d'affaires -->
+          <div
+            class="input-field col s6"
+            id="entrepriseFieldsA"
+            style="display: none"
+          >
+            <label for="chiffre_affaires">Chiffre d'affaires</label>
+            <input
+              class="validate"
+              type="number"
+              value=""
+              name="chiffre_affaires"
+              id="chiffre_affaires"
+              required
+            />
+          </div>
+
+          <!-- Informations sur le  (pour compte joint) -->
+
+          <div id="Form1" style="display: none">
+            <div class="input-field col s6">
+              <label for="_nom">Nom du </label>
+              <input
+                class="validate"
+                type="text"
+                value=""
+                name="_nom"
+                id="_nom"
+                required
+              />
+            </div>
+          </div>
+
+          <div id="Form2" style="display: none">
+            <div class="input-field col s6">
+              <label for="_prenom">Prénom du </label>
+              <input
+                class="validate"
+                type="text"
+                value=""
+                name="_prenom"
+                id="_prenom"
+                required
+              />
+            </div>
+          </div>
+
+          <div id="Form3" style="display: none">
+            <div class="input-field col s6">
+              <label for="_cni">CNI du </label>
+              <input
+                class="validate"
+                type="text"
+                value=""
+                name="_cni"
+                id="_cni"
+                required
+              />
+            </div>
+          </div>
+
+          <div id="Form4" style="display: none">
+            <div class="input-field col s6">
+              <label for="_tel">Téléphone du </label>
+              <input
+                class="validate"
+                type="text"
+                value=""
+                name="_tel"
+                id="_tel"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Champ type_client -->
+          <div class="input-field col s6">
+            <p>
+              <label>
+                <input
+                  class="with-gap"
+                  name="type_client"
+                  type="radio"
+                  value="particulier"
+                />
+                <span>Particulier</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input
+                  class="with-gap"
+                  name="type_client"
+                  type="radio"
+                  value="entreprise"
+                />
+                <span>Entreprise</span>
+              </label>
+            </p>
+          </div>
+
+          <!-- Champ type_compte -->
+
+          <div class="input-field col s6">
+            <select name="type_compte">
+              <option value="" disabled selected>
+                Choisissez le type de compte
+              </option>
+              <option value="courant">Compte Courant</option>
+              <option value="epargne">Compte Épargne</option>
+              <option value="joint">Compte Joint</option>
+            </select>
+            <label>Type de compte</label>
+          </div>
+
+          <!-- Bouton envoyer -->
+          <div class="input-field col s12">
+            <button
+              class="btn waves-effect waves-light pulse"
+              type="submit"
+              name="action"
+            >
+              <a href="valider.html ">Valider</a>
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems);
+    });
+  
+    document.getElementById('inscriptionForm').addEventListener('change', function() {
+      var typeClient = document.querySelector('input[name="type_client"]:checked').value;
+  
+      // Afficher les champs spécifiques en fonction du type de client
+      if (typeClient === 'particulier') {
+        document.getElementById('particulierFields').style.display = 'block';
+        document.getElementById('entrepriseFields').style.display = 'none';
+        document.getElementById('entrepriseFieldsA').style.display = 'none';
+        
+        
+      } else if (typeClient === 'entreprise') {
+        document.getElementById('particulierFields').style.display = 'none';
+        document.getElementById('entrepriseFields').style.display = 'block';
+        document.getElementById('entrepriseFieldsA').style.display = 'block';
+       
+        
+      } 
+    });
+    document.getElementById('inscriptionForm').addEventListener('change', function() {
+      var typeCompte = document.querySelector('select[name="type_compte"]').value;
+  
+      // Afficher les champs spécifiques en fonction du type de compte
+      if (typeCompte === 'joint') {
+          document.getElementById('Form1').style.display = 'block';
+          document.getElementById('Form2').style.display = 'block';
+          document.getElementById('Form3').style.display = 'block';
+          document.getElementById('Form4').style.display = 'block';
+      } else {
+          document.getElementById('Form1').style.display = 'none';
+          document.getElementById('Form2').style.display = 'none';
+          document.getElementById('Form3').style.display = 'none';
+          document.getElementById('Form4').style.display = 'none';
+      }
+  });
+  
+  
+  </script>
+

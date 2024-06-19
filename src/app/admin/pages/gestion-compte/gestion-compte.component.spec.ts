@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TransfertPageComponent } from './transfert-page.component';
+import { GestionCompteComponent } from './gestion-compte.component';
 
-describe('TransfertPageComponent', () => {
-  let component: TransfertPageComponent;
-  let fixture: ComponentFixture<TransfertPageComponent>;
+describe('GestionCompteComponent', () => {
+  let component: GestionCompteComponent;
+  let fixture: ComponentFixture<GestionCompteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TransfertPageComponent]
+      imports: [GestionCompteComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(TransfertPageComponent);
+    fixture = TestBed.createComponent(GestionCompteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
