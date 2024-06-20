@@ -19,7 +19,7 @@ import {
 export class NavbarComponent implements OnInit {
   private router = inject(Router);
   showNav = true;
-  private hiddenRoutes = ['/compte', '/admin','/login','/inscription'];
+  private hiddenRoutes = ['/admin','/login','/inscription'];
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
