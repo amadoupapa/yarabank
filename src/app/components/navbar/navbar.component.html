@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg bg-dark">
+<nav *ngIf="showNav" class="navbar navbar-expand-lg fixed-top bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand h1 text-white" href="#">YaraBank</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +23,7 @@
           </li>
 
           <li class="nav-item text-white">
-            <a class="nav-link text-white" href="#">Mon Compte</a>
+            <a class="nav-link text-white" routerLink="compte">Mon Compte</a>
           </li>
                  
         </ul>

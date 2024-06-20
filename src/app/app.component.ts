@@ -14,5 +14,5 @@ import { LoginPageComponent } from "./pages/login-page/login-page.component";
 export class AppComponent {
   title = 'yarabank';
   isLogin = true;
-  isAdmin = true;
+  isAdmin = false;
 }

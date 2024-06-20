@@ -1,0 +1,225 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
+	min-width: 100%;
+	min-height: 100vh;
+}
+
+input[type="checkbox"] {
+	position: absolute;
+	left: -9999px;
+	z-index: -100;
+}
+
+label {
+	cursor: pointer;
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100px;
+	margin: 0 auto;
+	width: 400px;
+	height: 600px;
+	z-index: 100;
+}
+
+.check {
+	color: #4b8830;
+	font-size: 200px;
+	line-height: 150px;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	text-align: center;
+	text-shadow: 1px 1px 0 lighten(#4b8830, 10%), 2px 2px 0 lighten(#4b8830, 10%),
+		3px 3px 0 lighten(#4b8830, 10%), 4px 4px 0 lighten(#4b8830, 10%),
+		5px 5px 0 lighten(#4b8830, 10%);
+	-webkit-text-stroke: 1px darken(#4b8830, 5%);
+	transition: all 0.65s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	right: -37.5px;
+	top: -260px;
+	z-index: 1;
+	
+	&::before {
+		content: 'check me';
+		color: #332210;
+		font-family: 'Gaegu';
+		font-size: 16px;
+		position: absolute;
+		transition: color 0.2s ease;
+		text-shadow: none;
+		top: -50px;
+		-webkit-text-stroke: 0;
+	}
+}
+
+.box {
+	margin: 0 auto;
+	position: relative;
+	left: -37px;
+	top: 400px;
+	width: 150px;
+	height: 150px;
+}
+
+.front {
+	background: #846232;
+	border: 3px solid #332210;
+	border-radius: 5px;
+	left: 0;
+	top: 0;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	
+	&::after {
+		background: #a78955;
+		content: '';
+		display: block;
+		width: 30%;
+		height: 20%;
+		position: absolute;
+		bottom: 10px;
+		left: 10px;
+	}
+
+	&::before {
+		background: lighten(#846232, 8%);
+		border: 2px solid #332210;
+		border-radius: 3px;
+		content: "";
+		display: block;
+		left: -12px;
+		top: -3px;
+		position: absolute;
+		transform: skewX(-15deg);
+		width: 100%;
+		height: 70px;
+	}
+}
+
+.shipping-label {
+	color: #332210;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	font-family: 'Libre Barcode 128 Text';
+	font-size: 18px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	width: 50%;
+	height: 20%;
+	
+	&::before {
+		content: 'not checked';
+		display: block;
+	}
+}
+
+.side {
+	border: 3px solid #332210;
+	border-radius: 5px;
+	position: absolute;
+	transform: skewY(-30deg);
+	height: 100%;
+	width: 75px;
+	top: -22px;
+
+	&.right {
+		background: #906930;
+		right: -72px;
+		z-index: 5;
+
+		&::before {
+			background: lighten(#906930, 10%);
+			border: 2px solid #332210;
+			border-radius: 3px;
+			content: "";
+			display: block;
+			position: absolute;
+			right: -12px;
+			top: -2px;
+			transform: skewX(15deg);
+			width: 100%;
+			height: 70px;
+		}
+	}
+
+	&.left {
+		background: darken(#846232, 15%);
+		left: 0;
+		z-index: 0;
+	}
+}
+
+.back {
+	background: darken(#846232, 20%);
+	border: 3px solid #332210;
+	border-radius: 5px;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	right: -72px;
+	top: -42px;
+	z-index: -10;
+}
+
+.shadow {
+	background: rgba(#332210,0.075);
+	border-radius: 50%;
+	height: 75px;
+	width: 300px;
+	margin: 0 auto;
+	position: relative;
+	transform: rotate(-2.5deg);	
+	bottom: -338px;
+	z-index: -20;
+}
+
+label:hover ~ .box {
+	.check {
+		transform: scale(1.05);
+	}
+}
+
+input[type="checkbox"]:checked ~ .box {
+	animation: box-scale 0.3s linear;
+	
+	> .check {
+		transform: translateY(175px);
+		
+		&::before {
+			color: transparent;
+		}
+	}
+	
+	.shipping-label {
+		&::before {
+			content: 'checked';
+		}
+	}
+}
+
+.text {
+		color: #332210;
+		font-family: 'Gaegu';
+		margin: 0 auto;
+		padding: 10px;
+		position: relative;
+		bottom: -375px;
+		max-width: 100%;
+}
+
+p {
+	margin-bottom: 10px;
+}
+
+@keyframes box-scale {
+	50% {
+		transform: scale(1.05);
+	}
+}
