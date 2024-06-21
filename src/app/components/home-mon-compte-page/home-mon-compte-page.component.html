@@ -1,12 +1,18 @@
 <section class="main">
     <section class="content">
-      <div class="content-div">
+      <div class="content-div ">
         <div> 
           <span class="map">Mon Solde</span>
           <br />
-          <span class="amount"
-            >1453680.89 <small><sup>FCFA</sup></small></span
-          >
+
+          @if (show) {
+            <span class="amount">1453680.89 <small><sup>FCFA</sup></small></span>
+          }
+          <!-- <div  *ngIf=show >
+            <span class="amount">1453680.89 <small><sup>FCFA</sup></small></span>
+          </div> -->
+          
+
         </div>
         
           <!-- <label class="switch">
@@ -16,8 +22,8 @@
 
           <!-- Rounded switch -->
           <label class="switch">
-            <input type="checkbox" />
-            <span></span>
+            <input (click)=" display()" type="checkbox"/>
+            <span>Solde</span>
           </label>
           
         
@@ -25,7 +31,7 @@
     </section>
 
     <section class="wallet">
-      <div class="overall">
+      <div class="">
         <table class="table table-striped table-bordered">
           <thead>
             <tr>
@@ -62,7 +68,7 @@
         </table>
       </div>
 
-      <div class="part-two">
+      <!-- <div class="part-two">
         <div class="balance">
           <div class="wb">
             <span class="s-1">
@@ -86,6 +92,6 @@
             </button>
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
   </section>

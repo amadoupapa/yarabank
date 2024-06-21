@@ -8,6 +8,7 @@ import { SplashPageComponent } from './pages/splash-page/splash-page.component';
 import { MonComptePageComponent } from './pages/mon-compte-page/mon-compte-page.component';
 import { ValiderPageComponent } from './pages/valider-page/valider-page.component';
 import { HomeMonComptePageComponent } from './components/home-mon-compte-page/home-mon-compte-page.component';
+import { MyHistoriqueComponent } from './pages/my-historique/my-historique.component';
 
 export const routes: Routes = [
   {
@@ -25,6 +26,10 @@ export const routes: Routes = [
       {
         path: 'home',
         component: HomeMonComptePageComponent,
+      },
+      {
+        path: 'myhistorique',
+        component: MyHistoriqueComponent,
       },
       {
         path: 'operation',
@@ -45,10 +50,7 @@ export const routes: Routes = [
     component: InscriptionPageComponent,
   },
 
-  {
-    path: 'historique',
-    component: HistoriquePageComponent,
-  },
+  
   {
     path: 'admin',
     component: HomePageComponent,

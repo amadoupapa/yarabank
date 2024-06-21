@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './home-mon-compte-page.component.scss'
 })
 export class HomeMonComptePageComponent {
+  show:boolean=false
+
+
+  display(){
+    this.show=!this.show;
+  }
 
 }
