@@ -9,6 +9,9 @@ import { MonComptePageComponent } from './pages/mon-compte-page/mon-compte-page.
 import { ValiderPageComponent } from './pages/valider-page/valider-page.component';
 import { HomeMonComptePageComponent } from './components/home-mon-compte-page/home-mon-compte-page.component';
 import { MyHistoriqueComponent } from './pages/my-historique/my-historique.component';
+import { GestionPretComponent } from './admin/pages/gestion-pret/gestion-pret.component';
+import { GestionClientComponent } from './admin/pages/gestion-client/gestion-client.component';
+import { GestionCompteComponent } from './admin/pages/gestion-compte/gestion-compte.component';
 
 export const routes: Routes = [
   {
@@ -35,6 +38,7 @@ export const routes: Routes = [
         path: 'operation',
         component: HomeComponent,
       },
+     
     ],
   },
   {
@@ -48,6 +52,18 @@ export const routes: Routes = [
   {
     path: 'inscription',
     component: InscriptionPageComponent,
+  },
+  {
+    path: 'courant',
+    component: GestionPretComponent,
+  },
+  {
+    path: 'epargne',
+    component: GestionClientComponent,
+  },
+  {
+    path: 'comptes',
+    component: GestionCompteComponent,
   },
 
   
