@@ -5,13 +5,13 @@ import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-inscription-page',
+  selector: 'app-inscription-e',
   standalone: true,
   imports: [ReactiveFormsModule,CommonModule,RouterLink],
-  templateUrl: './inscription-page.component.html',
-  styleUrl: './inscription-page.component.scss'
+  templateUrl: './inscription-e.component.html',
+  styleUrl: './inscription-e.component.scss'
 })
-export class InscriptionPageComponent {
+export class InscriptionEComponent {
   private router = inject(Router)
   private authService = inject(AuthService)
   private fb =inject (FormBuilder)

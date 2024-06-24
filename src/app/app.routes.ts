@@ -13,6 +13,7 @@ import { GestionPretComponent } from './admin/pages/gestion-pret/gestion-pret.co
 import { GestionClientComponent } from './admin/pages/gestion-client/gestion-client.component';
 import { GestionCompteComponent } from './admin/pages/gestion-compte/gestion-compte.component';
 import { AuthGaurd,  } from './services/auth-Guard';
+import { InscriptionEComponent } from './pages/inscription-e/inscription-e.component';
 
 export const routes: Routes = [
 
@@ -42,8 +43,13 @@ export const routes: Routes = [
     component: LoginPageComponent,
   },
   {
-    path: 'inscription',
+    path: 'inscriptionClient',
     component: InscriptionPageComponent,
+  },
+
+  {
+    path: 'inscriptionEntreprise',
+    component: InscriptionEComponent,
   },
   {
     path: 'courant',

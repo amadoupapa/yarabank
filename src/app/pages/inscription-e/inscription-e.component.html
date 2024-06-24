@@ -1,0 +1,222 @@
+<header>
+    <div class="container p-5">
+      <div class="row">
+        <div class="col s12 m12 l12" style="text-align: center; color: white">
+          <i class="large material-icons">add_circle</i>
+          <h2>Formulaire de demande d'ouverture de compte</h2>
+          <p>Veuillez Remplir tous les champs</p>
+        </div>
+      </div>
+      <form [formGroup]="sigInForm" >
+      <div class="row" id="blanc">
+        <div class="col l12 m12 s12" id="rectangle">
+          <form>
+            <!-- Champ prénom -->
+            <div class="input-field col s6">
+              <label for="prenom">Prénom</label>
+              <input
+                class="validate"
+                name="prenom"
+                type="text"
+                value=""
+                id="prenom"
+                placeholder="votre prenom"
+                required
+              />
+            </div>
+  
+            <!-- Champ nom -->
+            <div class="input-field col s6">
+              <label for="nom">Nom de famille</label>
+              <input
+                class="validate"
+                type="text"
+                value=""
+                name="nom"
+                id="nom"
+                placeholder="votre nom"
+                required
+                text-capitalize
+              />
+            </div>
+  
+            <!-- Champ Telephone -->
+            <div class="input-field col s6">
+              <label for="tel">Telephone</label>
+              <input
+                class="validate"
+                type="text"
+                value=""
+                name="tel"
+                id="tel"
+                placeholder="votre nume de telephone"
+                required
+              />
+            </div>
+  
+            <!-- Champ Adresse -->
+            <div class="input-field col s6">
+              <label for="adresse">Quartier</label>
+              <input
+                class="validate"
+                type="text"
+                value=""
+                name="adresse"
+                id="adresse"
+                minlength="3"
+                placeholder="quartier"
+                required
+              />
+            </div>
+  
+               <!-- Champ Adresse -->
+               <div class="input-field col s6">
+                <label for="adresse">Ville</label>
+                <input
+                  class="validate"
+                  type="text"
+                  value=""
+                  name="adresse"
+                  id="adresse"
+                  minlength="3"
+                  placeholder="ville"
+                  required
+                />
+              </div>
+  
+                 <!-- Champ Adresse -->
+            <div class="input-field col s6">
+              <label for="adresse">Pays</label>
+              <input
+                class="validate"
+                type="text"
+                value=""
+                name="adresse"
+                id="adresse"
+                minlength="3"
+                placeholder="pays"
+                required
+              />
+            </div>
+  
+            <!-- Champ date de naissance -->
+            <div class="input-field col s6">
+              <label for="naissance">Date de naissance</label>
+              <input
+                type="text"
+                class="datepicker"
+                name="naissance"
+                placeholder="date de Naissance"
+                class="validate"
+                required
+              />
+            </div>
+  
+            <!-- Champ email -->
+            <div class="input-field col s6">
+              <label for="email">Email</label>
+              <input
+                class="validate"
+                type="email"
+                value=""
+                name="email"
+                id="p1"
+                placeholder="exemple@gmail.com"
+                required
+              />
+            </div>
+  
+            <!-- Champ CNI -->
+            <!-- <div class="input-field col s6">
+              <label for="cni">CNI</label>
+              <input
+                class="validate"
+                type="text"
+                value=""
+                name="cni"
+                id="cni"
+                placeholder=""
+                required
+              />
+            </div> -->
+            <!-- Champ username-->
+            <div class="input-field col s6">
+              <label for="nom">Nom d'Utilisateur</label>
+              <input
+                class="validate"
+                type="text"
+                value=""
+                name="nom_utilisateur"
+                id="nom_utilisateur"
+                placeholder="nom d'utilisateur"
+                required
+              />
+            </div>
+            <!-- Champ mdp -->
+            <div class="input-field col s6">
+              <label for="nom">Mot de Passe</label>
+              <input
+                class="validate"
+                type="password"
+                value=""
+                name="mdp"
+                id="mdp"
+                placeholder="mot de passe"
+                required
+              />
+            </div>
+      
+  
+            <div class="input-field col s6">
+              
+              <label>Type de compte</label>
+            </div>
+  
+            <!-- Champ type_client -->
+            <div class="input-field col s6">
+              <p>
+                <label>
+                  <input
+                    class="with-gap"
+                    name="type_client"
+                    type="radio"
+                    value="Epargne"
+                  />
+                  <span>Epargne</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input
+                    class="with-gap"
+                    name="type_client"
+                    type="radio"
+                    value="courant"
+                  />
+                  <span>Courant</span>
+                </label>
+              </p>
+            </div>
+  
+           
+  
+           
+  
+            <!-- Bouton envoyer -->
+            <div class="input-field col s12">
+              <button
+                class="btn waves-effect waves-light pulse"
+                type="submit"
+                name="action"
+                routerLink="../valider">
+                <a>Valider</a>
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </form>
+    </div>
+  </header>
+  

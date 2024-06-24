@@ -7,6 +7,7 @@
         <p>Veuillez Remplir tous les champs</p>
       </div>
     </div>
+    <form [formGroup]="sigInForm" >
     <div class="row" id="blanc">
       <div class="col l12 m12 s12" id="rectangle">
         <form>
@@ -19,7 +20,7 @@
               type="text"
               value=""
               id="prenom"
-              placeholder="Aminata"
+              placeholder="votre prenom"
               required
             />
           </div>
@@ -33,7 +34,7 @@
               value=""
               name="nom"
               id="nom"
-              placeholder="Yara"
+              placeholder="votre nom"
               required
               text-capitalize
             />
@@ -48,14 +49,14 @@
               value=""
               name="tel"
               id="tel"
-              placeholder="00-00-00-00"
+              placeholder="votre nume de telephone"
               required
             />
           </div>
 
           <!-- Champ Adresse -->
           <div class="input-field col s6">
-            <label for="adresse">Adresse</label>
+            <label for="adresse">Quartier</label>
             <input
               class="validate"
               type="text"
@@ -63,7 +64,37 @@
               name="adresse"
               id="adresse"
               minlength="3"
-              placeholder="ACI,Bamako"
+              placeholder="quartier"
+              required
+            />
+          </div>
+
+             <!-- Champ Adresse -->
+             <div class="input-field col s6">
+              <label for="adresse">Ville</label>
+              <input
+                class="validate"
+                type="text"
+                value=""
+                name="adresse"
+                id="adresse"
+                minlength="3"
+                placeholder="ville"
+                required
+              />
+            </div>
+
+               <!-- Champ Adresse -->
+          <div class="input-field col s6">
+            <label for="adresse">Pays</label>
+            <input
+              class="validate"
+              type="text"
+              value=""
+              name="adresse"
+              id="adresse"
+              minlength="3"
+              placeholder="pays"
               required
             />
           </div>
@@ -75,7 +106,7 @@
               type="text"
               class="datepicker"
               name="naissance"
-              placeholder="12/31/2000"
+              placeholder="date de Naissance"
               class="validate"
               required
             />
@@ -96,7 +127,7 @@
           </div>
 
           <!-- Champ CNI -->
-          <div class="input-field col s6">
+          <!-- <div class="input-field col s6">
             <label for="cni">CNI</label>
             <input
               class="validate"
@@ -107,7 +138,7 @@
               placeholder=""
               required
             />
-          </div>
+          </div> -->
           <!-- Champ username-->
           <div class="input-field col s6">
             <label for="nom">Nom d'Utilisateur</label>
@@ -117,7 +148,7 @@
               value=""
               name="nom_utilisateur"
               id="nom_utilisateur"
-              placeholder="nom_utilisateur"
+              placeholder="nom d'utilisateur"
               required
             />
           </div>
@@ -130,117 +161,15 @@
               value=""
               name="mdp"
               id="mdp"
-              placeholder="mot_de_passe"
+              placeholder="mot de passe"
               required
             />
           </div>
-          <!-- Champ NIF -->
-          <div
-            class="input-field col s6"
-            id="entrepriseFields"
-            style="display: none"
-          >
-            <label for="NIF">NIF</label>
-            <input
-              class="validate"
-              type="text"
-              value=""
-              name="NIF"
-              id="NIF"
-              required
-            />
-          </div>
+    
 
-          <!-- Champ Revenu -->
-          <div
-            class="input-field col s6"
-            id="particulierFields"
-            style="display: none"
-          >
-            <label for="revenu">Revenu</label>
-            <input
-              class="validate"
-              type="number"
-              value=""
-              name="revenu"
-              id="revenu"
-              required
-            />
-          </div>
-
-          <!-- Champ Chiffre d'affaires -->
-          <div
-            class="input-field col s6"
-            id="entrepriseFieldsA"
-            style="display: none"
-          >
-            <label for="chiffre_affaires">Chiffre d'affaires</label>
-            <input
-              class="validate"
-              type="number"
-              value=""
-              name="chiffre_affaires"
-              id="chiffre_affaires"
-              required
-            />
-          </div>
-
-          <!-- Informations sur le  (pour compte joint) -->
-
-          <div id="Form1" style="display: none">
-            <div class="input-field col s6">
-              <label for="_nom">Nom du </label>
-              <input
-                class="validate"
-                type="text"
-                value=""
-                name="_nom"
-                id="_nom"
-                required
-              />
-            </div>
-          </div>
-
-          <div id="Form2" style="display: none">
-            <div class="input-field col s6">
-              <label for="_prenom">Prénom du </label>
-              <input
-                class="validate"
-                type="text"
-                value=""
-                name="_prenom"
-                id="_prenom"
-                required
-              />
-            </div>
-          </div>
-
-          <div id="Form3" style="display: none">
-            <div class="input-field col s6">
-              <label for="_cni">CNI du </label>
-              <input
-                class="validate"
-                type="text"
-                value=""
-                name="_cni"
-                id="_cni"
-                required
-              />
-            </div>
-          </div>
-
-          <div id="Form4" style="display: none">
-            <div class="input-field col s6">
-              <label for="_tel">Téléphone du </label>
-              <input
-                class="validate"
-                type="text"
-                value=""
-                name="_tel"
-                id="_tel"
-                required
-              />
-            </div>
+          <div class="input-field col s6">
+            
+            <label>Type de compte</label>
           </div>
 
           <!-- Champ type_client -->
@@ -251,9 +180,9 @@
                   class="with-gap"
                   name="type_client"
                   type="radio"
-                  value="particulier"
+                  value="Epargne"
                 />
-                <span>Particulier</span>
+                <span>Epargne</span>
               </label>
             </p>
             <p>
@@ -262,26 +191,16 @@
                   class="with-gap"
                   name="type_client"
                   type="radio"
-                  value="entreprise"
+                  value="courant"
                 />
-                <span>Entreprise</span>
+                <span>Courant</span>
               </label>
             </p>
           </div>
 
-          <!-- Champ type_compte -->
+         
 
-          <div class="input-field col s6">
-            <select name="type_compte">
-              <option value="" disabled selected>
-                Choisissez le type de compte
-              </option>
-              <option value="courant">Compte Courant</option>
-              <option value="epargne">Compte Épargne</option>
-              <option value="joint">Compte Joint</option>
-            </select>
-            <label>Type de compte</label>
-          </div>
+         
 
           <!-- Bouton envoyer -->
           <div class="input-field col s12">
@@ -289,8 +208,7 @@
               class="btn waves-effect waves-light pulse"
               type="submit"
               name="action"
-              routerLink="../valider"
-            >
+              routerLink="../valider">
               <a>Valider</a>
               <i class="material-icons right">send</i>
             </button>
@@ -298,5 +216,6 @@
         </form>
       </div>
     </div>
+  </form>
   </div>
 </header>
