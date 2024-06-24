@@ -21,6 +21,10 @@ export class AuthService {
     return this.http.post<any>(environment.apiUrl + 'createCustomer', form)
 
   }
+  createCustomerEntreprise(form: any): Observable<any> {
+    return this.http.post<any>(environment.apiUrl + 'createEntreprise', form)
+
+  }
 
   signout(): Observable<any> {
     return this.http.get<any>(environment.apiUrl + 'signOut')

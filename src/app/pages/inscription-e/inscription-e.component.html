@@ -1,4 +1,4 @@
-<header>
+<form [formGroup]="sigInForm" (ngSubmit)="handlerInscription()">
     <div class="container p-5">
       <div class="row">
         <div class="col s12 m12 l12" style="text-align: center; color: white">
@@ -7,34 +7,36 @@
           <p>Veuillez Remplir tous les champs</p>
         </div>
       </div>
-      <form [formGroup]="sigInForm" >
+     
       <div class="row" id="blanc">
         <div class="col l12 m12 s12" id="rectangle">
-          <form>
+        
             <!-- Champ prénom -->
             <div class="input-field col s6">
-              <label for="prenom">Nom</label>
+              <label for="prenom">Nom de l'Entrprise</label>
               <input
+              formControlName="firstName"
                 class="validate"
                 name="prenom"
                 type="text"
                 value=""
                 id="prenom"
-                placeholder="nom de l'entreprise"
+                placeholder="votre prenom"
                 required
               />
             </div>
   
             <!-- Champ nom -->
             <div class="input-field col s6">
-              <label for="nom">Site Web</label>
+              <label for="nom">site de l'Entrprise</label>
               <input
+              formControlName="siteWeb"
                 class="validate"
                 type="text"
                 value=""
                 name="nom"
                 id="nom"
-                placeholder="votre site Web"
+                placeholder="votre nom"
                 required
                 text-capitalize
               />
@@ -44,6 +46,7 @@
             <div class="input-field col s6">
               <label for="tel">Telephone</label>
               <input
+              formControlName="phone"
                 class="validate"
                 type="text"
                 value=""
@@ -58,6 +61,7 @@
             <div class="input-field col s6">
               <label for="adresse">Quartier</label>
               <input
+              formControlName="town"
                 class="validate"
                 type="text"
                 value=""
@@ -73,6 +77,7 @@
                <div class="input-field col s6">
                 <label for="adresse">Ville</label>
                 <input
+                formControlName="city"
                   class="validate"
                   type="text"
                   value=""
@@ -88,6 +93,7 @@
             <div class="input-field col s6">
               <label for="adresse">Pays</label>
               <input
+              formControlName="country"
                 class="validate"
                 type="text"
                 value=""
@@ -103,10 +109,11 @@
             <div class="input-field col s6">
               <label for="naissance">NIF</label>
               <input
+              formControlName="nif"
                 type="text"
                 class="datepicker"
                 name="naissance"
-                placeholder="numero d'identification fiscale"
+                placeholder="nif"
                 class="validate"
                 required
               />
@@ -116,6 +123,7 @@
             <div class="input-field col s6">
               <label for="email">Email</label>
               <input
+              formControlName="mail"
                 class="validate"
                 type="email"
                 value=""
@@ -143,6 +151,7 @@
             <div class="input-field col s6">
               <label for="nom">Nom d'Utilisateur</label>
               <input
+              formControlName="username"
                 class="validate"
                 type="text"
                 value=""
@@ -156,6 +165,7 @@
             <div class="input-field col s6">
               <label for="nom">Mot de Passe</label>
               <input
+              formControlName="password"
                 class="validate"
                 type="password"
                 value=""
@@ -165,18 +175,31 @@
                 required
               />
             </div>
-      
   
             <div class="input-field col s6">
-              
-              <label>Type de compte</label>
+              <label for="nom">Type de compte</label>
+              <select  formControlName="accountType" class="form-select">
+                <option value="EPARGNE">EPARGNE</option>
+                <option value="COURANT">COURANT</option>
+                
+              </select>
             </div>
   
+            <!-- <div class="input-field col s6">
+              <label>Type de compte</label>
+            </div> -->
+  
+         
+      
+  
+            
+  
             <!-- Champ type_client -->
-            <div class="input-field col s6">
+            <!-- <div class="input-field col s6">
               <p>
                 <label>
                   <input
+                  formControlName="accountType"
                     class="with-gap"
                     name="type_client"
                     type="radio"
@@ -188,6 +211,7 @@
               <p>
                 <label>
                   <input
+                   formControlName="accountType"
                     class="with-gap"
                     name="type_client"
                     type="radio"
@@ -196,7 +220,7 @@
                   <span>Courant</span>
                 </label>
               </p>
-            </div>
+            </div> -->
   
            
   
@@ -207,16 +231,16 @@
               <button
                 class="btn waves-effect waves-light pulse"
                 type="submit"
-                name="action"
-                routerLink="../valider">
+                >
                 <a>Valider</a>
                 <i class="material-icons right">send</i>
               </button>
             </div>
-          </form>
+         
         </div>
       </div>
-    </form>
+  
     </div>
-  </header>
+  </form>
+  
   
