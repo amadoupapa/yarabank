@@ -3,28 +3,23 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } 
 import { Router, RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 import { CommonModule, NgFor } from '@angular/common';
-import { AuthService } from '../../../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 @Component({
-  selector: 'app-gestion-client',
+  selector: 'app-compte',
   standalone: true,
   imports: [NgFor],
-  templateUrl: './gestion-client.component.html',
-  styleUrl: './gestion-client.component.scss'
+  templateUrl: './compte.component.html',
+  styleUrl: './compte.component.scss'
 })
-export class GestionClientComponent {
+export class CompteComponent {
 
-
- private router = inject(Router)
+  private router = inject(Router)
   private authService = inject(AuthService)
   private fb =inject (FormBuilder)
   loading: boolean = false;
   msg!: string;
   data:any;
 
-
-
-     
-  
 
 
   ngOnInit() {
@@ -52,4 +47,5 @@ export class GestionClientComponent {
    
 
   
+
 

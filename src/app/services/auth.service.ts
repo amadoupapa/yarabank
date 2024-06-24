@@ -16,6 +16,15 @@ export class AuthService {
     return this.http.post<any>(environment.apiUrl + 'signIn', login)
 
   }
+  getCourantloste(): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + 'accounts/COURANT')
+
+  }
+
+  getEpargneloste(): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + 'accounts/EPARGNE')
+
+  }
 
   createCustomer(form: any): Observable<any> {
     return this.http.post<any>(environment.apiUrl + 'createCustomer', form)

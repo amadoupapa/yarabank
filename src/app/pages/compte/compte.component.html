@@ -1,13 +1,14 @@
 <div class="container-fluid">
-    <h3 class="text-center">La Liste de Comptes  Epargnes</h3>
+    <h3 class="text-center">La Liste de Operations </h3>
 
     <table class="table table-striped table-bordered">
       <thead>
         <tr  class="text-center">
           <th >Numero de Comte</th>
-          <th >Type de Compte</th>
-          <th >Prenom</th>
-          <th >Nom</th>
+          <th >Type d'Operation</th>
+          <th >Montant d'Operation</th>
+          <th >Satatus</th>
+           <th >Action</th>
         </tr>
       </thead>
       <tbody  class="text-center" *ngFor="let account of data">
@@ -17,6 +18,11 @@
           <td>{{account.accountType}} </td>
           <td >{{account.customerDomain.firstName}}</td>
           <td> {{account.customerDomain.lastName}}</td>
+          <td> <button type="button" class="btn  btn-success">Accepter</button>
+            &nbsp;
+            <button type="button" class="btn btn-danger">Rejeter</button>
+
+        </td>
           
         </tr>
   

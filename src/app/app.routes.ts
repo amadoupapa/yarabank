@@ -14,6 +14,7 @@ import { GestionClientComponent } from './admin/pages/gestion-client/gestion-cli
 import { GestionCompteComponent } from './admin/pages/gestion-compte/gestion-compte.component';
 import { AuthGaurd,  } from './services/auth-Guard';
 import { InscriptionEComponent } from './pages/inscription-e/inscription-e.component';
+import { CompteComponent } from './pages/compte/compte.component';
 
 export const routes: Routes = [
 
@@ -53,7 +54,11 @@ export const routes: Routes = [
   },
   {
     path: 'courant',
-    component: GestionPretComponent,
+    component: GestionCompteComponent,
+  },
+  {
+    path: 'operations',
+    component: CompteComponent,
   },
   {
     path: 'epargne',
@@ -61,7 +66,7 @@ export const routes: Routes = [
   },
   {
     path: 'comptes',
-    component: GestionCompteComponent,
+    component: GestionPretComponent,
   },
 
   
