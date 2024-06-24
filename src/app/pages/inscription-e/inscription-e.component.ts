@@ -29,7 +29,7 @@ export class InscriptionEComponent {
         city: new FormControl("",[Validators.required]),
         country: new FormControl("",[Validators.required,Validators.minLength(4)]),
         mail: new FormControl("",[Validators.required]),
-        dateOfBirth: new FormControl("",[Validators.required,Validators.minLength(4)]),
+        nif: new FormControl("",[Validators.required,Validators.minLength(4)]),
       
       })
     }
