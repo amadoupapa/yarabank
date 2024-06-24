@@ -8,6 +8,8 @@ import {
   RouterLink,
   RouterLinkActive,
 } from '@angular/router';
+import Swal from 'sweetalert2';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,7 +19,8 @@ import {
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent implements OnInit {
-  private router = inject(Router);
+  private router = inject(Router)
+  private authService = inject(AuthService)
   showNav = true;
   private hiddenRoutes = ['/admin','/login','/inscription'];
   ngOnInit(): void {
@@ -27,5 +30,47 @@ export class NavbarComponent implements OnInit {
         this.showNav = !this.hiddenRoutes.includes(event.url);
       }
     });
+  }
+
+  signout() {
+    Swal.fire({
+      title: "Déconnexion",
+      text: "Voulez-vous vraiment vous déconnectez ?",
+      showCancelButton: true,
+      cancelButtonText: 'Non',
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Oui"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.handleDeconnexion()
+      }
+    });
+  }
+
+
+
+  handleDeconnexion(){
+    this.authService.signout().subscribe({
+      next: (data) => {
+        if(data.status===1){
+          Swal.fire({
+            icon: "success",
+            text:data.message,
+            showConfirmButton: false,
+            timer: 1000
+          });
+        localStorage.clear();
+        this.router.navigateByUrl('login')
+         sessionStorage.setItem('isConnected', 'false');
+        }
+      },
+      error: (err) => {
+        localStorage.clear();
+        this.router.navigateByUrl('login')
+        sessionStorage.setItem('isConnected', 'false');
+
+      }
+    })
   }
 }

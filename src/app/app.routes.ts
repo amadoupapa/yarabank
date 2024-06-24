@@ -12,34 +12,26 @@ import { MyHistoriqueComponent } from './pages/my-historique/my-historique.compo
 import { GestionPretComponent } from './admin/pages/gestion-pret/gestion-pret.component';
 import { GestionClientComponent } from './admin/pages/gestion-client/gestion-client.component';
 import { GestionCompteComponent } from './admin/pages/gestion-compte/gestion-compte.component';
+import { AuthGaurd,  } from './services/auth-Guard';
 
 export const routes: Routes = [
-  {
+
+    // {
+    //     path: 'admin',
+    //     loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule),
+    //   },
+    //   {
+    //     path: '', loadChildren: () => import('../app/components/login/login.module').then(m => m.LoginModule),
+    //   },
+  
+  
+    {
     path: '',
     component: SplashPageComponent,
   },
   {
     path: 'valider',
     component: ValiderPageComponent,
-  },
-  {
-    path: 'compte',
-    component: MonComptePageComponent,
-    children: [
-      {
-        path: 'home',
-        component: HomeMonComptePageComponent,
-      },
-      {
-        path: 'myhistorique',
-        component: MyHistoriqueComponent,
-      },
-      {
-        path: 'operation',
-        component: HomeComponent,
-      },
-     
-    ],
   },
   {
     path: 'historiques',
@@ -71,4 +63,26 @@ export const routes: Routes = [
     path: 'admin',
     component: HomePageComponent,
   },
+  
+  {
+    path: 'compte',
+    component: MonComptePageComponent,
+    children: [
+      {
+        path: 'home',
+        component: HomeMonComptePageComponent,
+      },
+      {
+        path: 'myhistorique',
+        component: MyHistoriqueComponent,
+      },
+      {
+        path: 'operation',
+        component: HomeComponent,
+      },
+
+     
+    ],
+   canActivate :[AuthGaurd]
+  }, 
 ];
