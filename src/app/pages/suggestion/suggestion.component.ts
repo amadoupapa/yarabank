@@ -1,40 +1,37 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 import Swal from 'sweetalert2';
-import { CommonModule, NgFor, NgIf } from '@angular/common';
-import { AuthService } from '../../../services/auth.service';
 @Component({
-  selector: 'app-gestion-client',
+  selector: 'app-suggestion',
   standalone: true,
-  imports: [NgFor,NgIf],
-  templateUrl: './gestion-client.component.html',
-  styleUrl: './gestion-client.component.scss'
+  imports: [ReactiveFormsModule,CommonModule,RouterLink],
+  templateUrl: './suggestion.component.html',
+  styleUrl: './suggestion.component.scss'
 })
-export class GestionClientComponent {
-
-
- private router = inject(Router)
+export class SuggestionComponent {
+  private router = inject(Router)
   private authService = inject(AuthService)
   private fb =inject (FormBuilder)
   loading: boolean = false;
-  msg!: string;
-  data:any;
+  sigInForm : FormGroup ;
 
 
+  constructor(){
 
+    this.sigInForm =  new FormGroup({
+      fullName: new FormControl("",[Validators.required]),
+      message: new FormControl("",[Validators.required,Validators.minLength(4)]),
      
-  
-
-
-  ngOnInit() {
-    this.getList()
+    
+    })
   }
-
-  activation(id :string) {
+  handlerSuggestion() {
     Swal.fire({
-      title: "Activation",
-      text: "Voulez-vous vraiment actver cet compte ?",
+      title: "Suggestion",
+      text: "Voulez-vous vraiment envoyer votre  suggestion ?",
       showCancelButton: true,
       cancelButtonText: 'Non',
       confirmButtonColor: "#d33",
@@ -42,13 +39,18 @@ export class GestionClientComponent {
       confirmButtonText: "Oui"
     }).then((result) => {
       if (result.isConfirmed) {
-        this.handlerActivation(id)
+        this.suggestion()
       }
     });
   }
-  handlerActivation(id:string) {
+
+
+
+  suggestion() {
     this.loading = true
-      this.authService.activation(id).subscribe({
+    if (this.sigInForm.valid) {
+      const value = this.sigInForm.value;
+      this.authService.suggestion(value).subscribe({
         next: (resp) => {
           if (resp.status === 1) {
             Swal.fire({
@@ -57,9 +59,10 @@ export class GestionClientComponent {
               showConfirmButton: false,
               timer: 1500
             });
-           
+            this.router.navigateByUrl('');
+            //this.router.navigateByUrl('login');
             this.loading = false
-this.getList();
+
 
           }
 
@@ -80,25 +83,12 @@ this.getList();
 
       )
     }
-  
-
-  getList() {
-  
-      this.authService.getEpargneloste().subscribe({
-        next: (resp) => {
-           this.data=resp.resultat 
-           console.log(this.data)
-        },
-        error: (err) => {
-          this.loading = false
-             this.msg= err.error.message
-        },
-
-      })
-    }
 
   }
    
 
-  
+}
+
+
+
 

@@ -20,7 +20,22 @@ export class AuthService {
     return this.http.get<any>(environment.apiUrl + 'accounts/COURANT')
 
   }
+  getSuggestion(): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + 'suggestions')
 
+  }
+  activation(id:any): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + 'accountActivation/'+id)
+
+  }
+  activationexist(id:any): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + 'accountActivation/'+id)
+
+  }
+  suggestion(suggestion:any): Observable<any> {
+    return this.http.post<any>(environment.apiUrl + 'suggestion',suggestion)
+
+  }
   getEpargneloste(): Observable<any> {
     return this.http.get<any>(environment.apiUrl + 'accounts/EPARGNE')
 

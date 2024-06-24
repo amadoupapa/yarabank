@@ -15,6 +15,7 @@ import { GestionCompteComponent } from './admin/pages/gestion-compte/gestion-com
 import { AuthGaurd,  } from './services/auth-Guard';
 import { InscriptionEComponent } from './pages/inscription-e/inscription-e.component';
 import { CompteComponent } from './pages/compte/compte.component';
+import { SuggestionComponent } from './pages/suggestion/suggestion.component';
 
 export const routes: Routes = [
 
@@ -55,6 +56,10 @@ export const routes: Routes = [
   {
     path: 'courant',
     component: GestionCompteComponent,
+  },
+  {
+    path: 'suggestion',
+    component: SuggestionComponent,
   },
   {
     path: 'operations',

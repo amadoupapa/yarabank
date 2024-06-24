@@ -1,0 +1,67 @@
+<form [formGroup]="sigInForm" (ngSubmit)="handlerSuggestion()">
+    <div class="container p-5">
+      <div class="row">
+        <div class="col s12 m12 l12" style="text-align: center; color: white">
+          <i class="large material-icons">add_circle</i>
+          <h2>Formulaire de demande de Suggestion</h2>
+          <p>Veuillez Remplir tous les champs</p>
+        </div>
+      </div>
+     
+      <div class="row" id="blanc">
+        <div class="col l12 m12 s12" id="rectangle">
+        
+            <!-- Champ prénom -->
+            <div class="input-field col s6">
+              <label for="prenom">Nom Complet </label>
+              <input
+              formControlName="fullName"
+                class="validate"
+                name="prenom"
+                type="text"
+                value=""
+                id="prenom"
+                placeholder="votre nom complet"
+                required
+              />
+            </div>
+  
+            <!-- Champ nom -->
+            <div class="input-field col s6">
+              <label for="nom">votre message</label>
+              <input
+              formControlName="message"
+                class="validate"
+                type="text"
+                value=""
+                name="nom"
+                id="nom"
+                placeholder="votre message"
+                required
+                text-capitalize
+              />
+            </div>
+  
+           
+           
+  
+           
+  
+            <!-- Bouton envoyer -->
+            <div class="input-field col s12">
+              <button
+                class="btn waves-effect waves-light pulse"
+                type="submit"
+                >
+                <a>Valider</a>
+                <i class="material-icons right">send</i>
+              </button>
+            </div>
+         
+        </div>
+      </div>
+  
+    </div>
+  </form>
+  
+  
