@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import Swal from 'sweetalert2';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [],
+  imports: [NgFor,NgIf],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
@@ -14,6 +15,8 @@ export class HomePageComponent {
 
   private router = inject(Router)
   private authService = inject(AuthService)
+  msg!: string;
+  data:any;
   signout() {
     Swal.fire({
       title: "Déconnexion",
@@ -53,6 +56,34 @@ export class HomePageComponent {
         sessionStorage.setItem('isConnected', 'false');
 
       }
+    })
+  }
+
+
+ 
+
+
+
+     
+  
+
+
+  ngOnInit() {
+    this.getList()
+  }
+
+  getList() {
+  
+    this.authService.getOperation().subscribe({
+      next: (resp) => {
+         this.data=resp.resultat 
+         console.log(this.data)
+      },
+      error: (err) => {
+      
+           this.msg= err.error.message
+      },
+
     })
   }
 

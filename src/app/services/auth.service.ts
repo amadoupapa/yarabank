@@ -46,6 +46,21 @@ export class AuthService {
 
   }
 
+  getOperation(): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + 'liste')
+
+  }
+
+  getMyOperation(): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + 'myliste')
+
+  }
+
+  getbalance(): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + 'balance')
+
+  }
+
   createCustomer(form: any): Observable<any> {
     return this.http.post<any>(environment.apiUrl + 'createCustomer', form)
 
