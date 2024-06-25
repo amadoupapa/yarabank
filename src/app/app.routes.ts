@@ -16,6 +16,7 @@ import { AuthGaurd,  } from './services/auth-Guard';
 import { InscriptionEComponent } from './pages/inscription-e/inscription-e.component';
 import { CompteComponent } from './pages/compte/compte.component';
 import { SuggestionComponent } from './pages/suggestion/suggestion.component';
+import { AddCompteComponent } from './pages/add-compte/add-compte.component';
 
 export const routes: Routes = [
 
@@ -64,6 +65,11 @@ export const routes: Routes = [
   {
     path: 'operations',
     component: CompteComponent,
+  },
+
+  {
+    path: 'ajouter',
+    component: AddCompteComponent,
   },
   {
     path: 'epargne',

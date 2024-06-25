@@ -1,0 +1,36 @@
+
+  <!-- Button trigger modal -->
+  <button hidden  id='retraitModalBtn' type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#retraitModal">
+    Faire un retrait
+  </button>
+  <div id='retraitModal' class="modal fade"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <form [formGroup]="retraitForm" class="modal-content" (ngSubmit)="onSubmit()">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Retrait d'argent</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">     
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Numero de votre compte</label>
+            <input type="text" class="form-control" id="numCompte" aria-describedby="depotHelp" formControlName="numCompte">
+            <!-- <div id="depotHelp" class="form-text">Veuillez saisir le montant du depot </div> -->
+          </div>                
+      </div>
+
+        <div class="modal-body">     
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Montant du depot</label>
+              <input type="text" class="form-control" id="montantDepot" aria-describedby="depotHelp" formControlName="montantDepot">
+              <div id="depotHelp" class="form-text">Veuillez saisir le montant du depot </div>
+            </div>                
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-primary">Valider</button>
+        </div>
+      </form>
+    </div>
+  </div>
+

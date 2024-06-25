@@ -28,10 +28,15 @@ export class AuthService {
     return this.http.get<any>(environment.apiUrl + 'accountActivation/'+id)
 
   }
-  activationexist(id:any): Observable<any> {
-    return this.http.get<any>(environment.apiUrl + 'accountActivation/'+id)
+
+  createExitCustomer(customer:any): Observable<any> {
+    
+    return this.http.get<any>(environment.apiUrl + 'createCustomerExist/'+customer.idAccount+"/"+customer.accountType)
 
   }
+
+
+  
   suggestion(suggestion:any): Observable<any> {
     return this.http.post<any>(environment.apiUrl + 'suggestion',suggestion)
 

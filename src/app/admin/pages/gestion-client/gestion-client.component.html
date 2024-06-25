@@ -6,6 +6,7 @@
         <tr  class="text-center">
           <th >Numero de Comte</th>
           <th >Type de Compte</th>
+          <th >Type de Client</th>
           <th >Prenom</th>
           <th >Nom</th>
           <th >Action</th>
@@ -16,6 +17,7 @@
         <tr class="text-center">
           <th >{{account.accountNumber}}</th>
           <td>{{account.accountType}} </td>
+          <td >{{account.customerDomain.customerType}}</td>
           <td >{{account.customerDomain.firstName}}</td>
           <td> {{account.customerDomain.lastName}}</td>
           <td *ngIf="account.accountStatus==false">  <button (click)=" activation(account.id)" type="button" class="btn  btn-success">ACTIVER</button>

@@ -54,21 +54,27 @@
     <h2>Operations Courantes</h2>
     <div class="row flex">
 
-      <div (click)="openModal('depotModalBtn')"  class="col-3 bg-c-green rounded border shadow-sm mx-2 p-3" style="cursor: pointer;">
+      <div (click)="openModal('depotModalBtn')"  class=" col-3 bg-c-green rounded border shadow-sm px-4 py-3 " style="cursor: pointer;">
         <span><i class="fa-solid fa-wallet h1"></i></span>
-        <p class="h4">Effectuer un depot</p>
+        <p class="m-b-20">Effectuer un depot</p>
+      </div>
+      <div (click)="openModal('retraitModalBtn')"  class="col-3 bg-c-green rounded border shadow-sm px-4 py-3 " style="cursor: pointer;">
+        <span><i class="fa-solid fa-wallet h1"></i></span>
+        <p class="m-b-20">Effectuer un retrait</p>
       </div>
 
-      <div (click)="openModal('transfertModalBtn')" data-bs-target="#staticBackdrop" class="col-3 bg-c-green rounded border shadow-sm mx-2 p-3" style="cursor: pointer;">
+      <div (click)="openModal('transfertModalBtn')" data-bs-target="#staticBackdrop" class="col-3 bg-c-green px-4 py-3 rounded border shadow-sm " style="cursor: pointer;">
         <span><i class="fa-solid fa-hand-holding-dollar h1"></i></span>
-        <p class="h4">Transferer de l'argent</p>
+        <p class="m-b-20">Transferer de l'argent</p>
       </div>
 
-      <div class="col-3 bg-c-green rounded border shadow-sm mx-2 p-3" routerLink="/compte/myhistorique" style="cursor: pointer;">
-        <span><i class="fa-solid fa-clock-rotate-left h3"></i></span>
-        <p class="h4">Historique des transactions</p>
+      <div class="col-3 bg-c-green rounded border shadow-sm px-4 py-3" routerLink="/compte/myhistorique" style="cursor: pointer;">
+        <span><i class="fa-solid fa-clock-rotate-left h1"></i></span>
+        <p class="m-b-20">Historiques de transactions</p>
       </div>
+      
 
+      <app-retrait-form></app-retrait-form>
       <app-depot-form></app-depot-form>
       <app-transfert-form></app-transfert-form>
     </div>
