@@ -5,7 +5,7 @@
   </button>
   <div id='transfertModal' class="modal fade"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-      <form [formGroup]="transfertForm" class="modal-content" (ngSubmit)="onSubmit()">
+      <form [formGroup]="transfertForm" class="modal-content" (ngSubmit)="handlerTransfert()">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="staticBackdropLabel">Transfert d'argent</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -13,17 +13,17 @@
         <div class="modal-body">  
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Numero de votre compte a debiter</label>
-            <input type="number" class="form-control"  aria-describedby="benetHelp" formControlName="numCompte">
+            <input type="text" class="form-control"  aria-describedby="benetHelp" formControlName="sender">
             <!-- <div id="depotHelp" class="form-text">Veuillez saisir le montant du depot </div> -->
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Numero de compte du Beneficiaire</label>
-            <input type="number" class="form-control"  aria-describedby="benetHelp" formControlName="numBeneficiaire">
+            <input type="text" class="form-control"  aria-describedby="benetHelp" formControlName="receiver">
             <!-- <div id="depotHelp" class="form-text">Veuillez saisir le montant du depot </div> -->
           </div>    
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Montant a transferer</label>
-              <input type="text" class="form-control"  aria-describedby="depotHelp" formControlName="montantTransfert">
+              <input type="text" class="form-control"  aria-describedby="depotHelp" formControlName="amount">
               <!-- <div id="depotHelp" class="form-text">Veuillez saisir le montant du depot </div> -->
             </div>                
         </div>

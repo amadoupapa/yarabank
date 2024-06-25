@@ -16,6 +16,23 @@ export class AuthService {
     return this.http.post<any>(environment.apiUrl + 'signIn', login)
 
   }
+
+  depot(form: any): Observable<any> {
+    return this.http.post<any>(environment.apiUrl + 'deposit', form)
+
+  }
+
+  retrait(form: any): Observable<any> {
+   
+    return this.http.post<any>(environment.apiUrl + 'withdrawal', form)
+
+  }
+
+  transfert(form: any): Observable<any> {
+    console.log("les data sont",form);
+    return this.http.post<any>(environment.apiUrl + 'transfert', form)
+
+  }
   getCourantloste(): Observable<any> {
     return this.http.get<any>(environment.apiUrl + 'accounts/COURANT')
 
@@ -26,6 +43,10 @@ export class AuthService {
   }
   activation(id:any): Observable<any> {
     return this.http.get<any>(environment.apiUrl + 'accountActivation/'+id)
+
+  }
+  activationOperation(id:any): Observable<any> {
+    return this.http.get<any>(environment.apiUrl + 'activation/'+id)
 
   }
 

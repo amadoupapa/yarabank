@@ -22,6 +22,7 @@ export class NavbarComponent implements OnInit {
   private router = inject(Router)
   private authService = inject(AuthService)
   showNav = true;
+  view = false;
   private hiddenRoutes = ['/admin','/login','/inscription'];
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
@@ -29,7 +30,10 @@ export class NavbarComponent implements OnInit {
         // cache navbar si l'url inclue un elt de hiddenRoutes
         this.showNav = !this.hiddenRoutes.includes(event.url);
       }
+    
     });
+    this.checkAuth()
+
   }
 
   signout() {
@@ -73,4 +77,10 @@ export class NavbarComponent implements OnInit {
       }
     })
   }
+  checkAuth() {
+    if (this.authService.isLoggedIn()) {
+      this.view =!this.view;
+     }
+ 
+   }
 }

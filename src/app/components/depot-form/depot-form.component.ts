@@ -1,29 +1,88 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
+import Swal from 'sweetalert2';
+import { AuthService } from '../../services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-depot-form',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule,CommonModule,RouterLink],
   templateUrl: './depot-form.component.html',
   styleUrl: './depot-form.component.scss'
 })
-export class DepotFormComponent  implements OnInit{
+export class DepotFormComponent {
   depotForm!:FormGroup;
-  private fb = inject(FormBuilder);
-  ngOnInit(): void {
-      this.depotForm = this.fb.group({
-        montantDepot: ['',[Validators.required,Validators.pattern('^-?\\d*\\.?\\d+$')]]
-      })
-  }
+  private router = inject(Router)
+  private authService = inject(AuthService)
+  private fb =inject (FormBuilder)
+  loading: boolean = false;
+  constructor(){
 
-  onSubmit(){
-    if(this.depotForm.valid){
-      console.log('traitement formulaire non implemente')
-    }else{
-      alert('Veuillez saisir un montant valide !');
+      this.depotForm =  new FormGroup({
+        accountNumber: new FormControl("",[Validators.required]),
+        amount: new FormControl("",[Validators.required,Validators.minLength(4)]),
+      
+      })
     }
-  }
+    handlerdepot() {
+      Swal.fire({
+        title: "Depot d'argent",
+        text: "Voulez-vous vraiment faire un depot ?",
+        showCancelButton: true,
+        cancelButtonText: 'Non',
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6",
+        confirmButtonText: "Oui"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.depot()
+        }
+      });
+    }
+
+  
+  
+    depot() {
+      this.loading = true
+      if (this.depotForm.valid) {
+        const value = this.depotForm.value;
+        this.authService.depot(value).subscribe({
+          next: (resp) => {
+            if (resp.status === 1) {
+              Swal.fire({
+                icon: "success",
+                text: resp.message,
+                showConfirmButton: false,
+                timer: 1500
+              });
+              this.router.navigateByUrl('compte/home');
+              //this.router.navigateByUrl('login');
+              this.loading = false
+  
+  
+            }
+  
+  
+  
+          },
+          error: (err) => {
+            this.loading = false
+              Swal.fire({
+                icon: "error",
+                text: err.error.message,
+              });
+  
+  
+          }
+  
+        }
+  
+        )
+      }
+  
+    }
 
   
 

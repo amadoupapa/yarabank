@@ -5,7 +5,7 @@
   </button>
   <div id='depotModal' class="modal fade"  data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-      <form [formGroup]="depotForm" class="modal-content" (ngSubmit)="onSubmit()">
+      <form [formGroup]="depotForm" class="modal-content" (ngSubmit)="handlerdepot()">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="staticBackdropLabel">Depot d'argent</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -14,7 +14,7 @@
         <div class="modal-body">     
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Numero de votre compte</label>
-            <input type="text" class="form-control" id="numCompte" aria-describedby="depotHelp" formControlName="numCompte">
+            <input type="text" class="form-control" id="numCompte" aria-describedby="depotHelp" formControlName="accountNumber">
             <!-- <div id="depotHelp" class="form-text">Veuillez saisir le montant du depot </div> -->
           </div>                
       </div>
@@ -22,7 +22,7 @@
         <div class="modal-body">     
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Montant du depot</label>
-              <input type="text" class="form-control" id="montantDepot" aria-describedby="depotHelp" formControlName="montantDepot">
+              <input type="text" class="form-control" id="montantDepot" aria-describedby="depotHelp" formControlName="amount">
               <div id="depotHelp" class="form-text">Veuillez saisir le montant du depot </div>
             </div>                
         </div>
