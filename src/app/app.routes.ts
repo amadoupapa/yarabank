@@ -37,10 +37,7 @@ export const routes: Routes = [
     path: 'valider',
     component: ValiderPageComponent,
   },
-  {
-    path: 'historiques',
-    component: HistoriquePageComponent,
-  },
+ 
   {
     path: 'login',
     component: LoginPageComponent,
@@ -49,6 +46,7 @@ export const routes: Routes = [
     path: 'inscriptionClient',
     component: InscriptionPageComponent,
   },
+  
 
   {
     path: 'inscriptionEntreprise',
@@ -94,6 +92,7 @@ export const routes: Routes = [
         path: 'home',
         component: HomeMonComptePageComponent,
       },
+     
       {
         path: 'myhistorique',
         component: MyHistoriqueComponent,
@@ -101,6 +100,14 @@ export const routes: Routes = [
       {
         path: 'operation',
         component: HomeComponent,
+      },
+      {
+        path: 'historiques',
+        component: CompteComponent,
+      },
+      {
+        path: 'historique',
+        component: HistoriquePageComponent,
       },
 
      

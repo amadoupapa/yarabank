@@ -42,6 +42,8 @@
               <th >Type d'Operation</th>
               <th >Date  d'Operation</th>
               <th >Montant</th>
+              <th >Numero de  Reference</th>
+             
             </tr>
           </thead>
           <tbody  class="text-center" *ngFor="let account of data">
@@ -51,6 +53,8 @@
               <td>{{account.type}} </td>
               <td >{{account.operationDate}}</td>
               <td> {{account.amount}}</td>
+              <td> {{account.id}}</td>
+            
               
             </tr>
       
